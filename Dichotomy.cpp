@@ -69,7 +69,7 @@ double Dichotomy::solveDichotomy() {
 
 double Dichotomy::solveNewton(double x) {
 
-    // захист від неправильного старту
+    
     if (x <= 0) x = 0.1;
 
     for (int i = 0; i < 1000; i++) {
@@ -77,7 +77,7 @@ double Dichotomy::solveNewton(double x) {
         double fx = f(x);
         double dfx = df(x);
 
-        // захист від ділення на 0
+        
         if (abs(dfx) < 1e-8) {
             cout << "Derivative too small!" << endl;
             return x;
