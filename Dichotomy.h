@@ -15,7 +15,7 @@ public:
     void setEps(double eps);
 
     double solveDichotomy();
-    double solveNewton(double x0); // початкове значення
+    double solveNewton(double x0); 
 };
 
 #endif
