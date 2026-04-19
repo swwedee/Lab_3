@@ -3,21 +3,19 @@
 
 class Dichotomy {
 private:
-    double a, b;   
-    double eps;    
+    double a, b;
+    double eps;
 
-    double f(double x);   
-    double df(double x); 
+    double f(double x);
+    double df(double x);
 
 public:
     void setA(double a);
     void setB(double b);
     void setEps(double eps);
 
-    double solveDichotomy(); 
-    double solveNewton();    
+    double solveDichotomy();
+    double solveNewton(double x0); // початкове значення
 };
 
 #endif
-
-
