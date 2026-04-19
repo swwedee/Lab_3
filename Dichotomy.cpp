@@ -28,13 +28,6 @@ void Dichotomy::setEps(double eps) {
 
 
 
-
-
-
-
-
-
-
 double Dichotomy::solveDichotomy() {
 
     if (f(a) * f(b) > 0) {
@@ -59,14 +52,6 @@ double Dichotomy::solveDichotomy() {
 
 
 
-
-
-
-
-
-
-
-
 double Dichotomy::solveNewton(double x) {
 
     
@@ -85,7 +70,6 @@ double Dichotomy::solveNewton(double x) {
 
         double x1 = x - fx / dfx;
 
-        // не даємо вилетіти в область x < 0
         if (x1 <= 0)
             x1 = x / 2;
 
