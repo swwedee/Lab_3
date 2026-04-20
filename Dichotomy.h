@@ -14,8 +14,8 @@ public:
     void setB(double b);
     void setEps(double eps);
 
-    double solveDichotomy();
-    double solveNewton(double x0); // початкове значення
+    double solveDichotomy(int &iterations);
+    double solveNewton(double x0, int &iterations);
 };
 
 #endif

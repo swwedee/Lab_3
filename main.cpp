@@ -9,17 +9,23 @@ int main() {
     double b = 1.0;
     double eps = 0.0001;
 
-    Dichotomy obj; // без new/delete — простіше
+    Dichotomy obj;
 
     obj.setA(a);
     obj.setB(b);
     obj.setEps(eps);
 
-    cout << "Dichotomy method: " << obj.solveDichotomy() << endl;
+    int iterD, iterN;
 
-    // будь-яке початкове значення (але краще > 0)
+    double rootD = obj.solveDichotomy(iterD);
+    cout << "Dichotomy method: " << rootD << endl;
+    cout << "Dichotomy iterations: " << iterD << endl;
+
     double x0 = 0.8;
-    cout << "Newton method: " << obj.solveNewton(x0) << endl;
+    double rootN = obj.solveNewton(x0, iterN);
+
+    cout << "Newton method: " << rootN << endl;
+    cout << "Newton iterations: " << iterN << endl;
 
     return 0;
 }

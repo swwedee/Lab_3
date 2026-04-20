@@ -24,25 +24,14 @@ void Dichotomy::setEps(double eps) {
     this->eps = eps;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-double Dichotomy::solveDichotomy() {
+double Dichotomy::solveDichotomy(int &iter) {
 
     if (f(a) * f(b) > 0) {
-        cout << "No root on this interval" << endl;
         return 0;
     }
 
     double c;
+    iter = 0;
 
     while (abs(b - a) > eps) {
         c = (a + b) / 2;
@@ -51,43 +40,33 @@ double Dichotomy::solveDichotomy() {
             b = c;
         else
             a = c;
+
+        iter++;
     }
 
     return (a + b) / 2;
 }
 
+double Dichotomy::solveNewton(double x, int &iter) {
 
-
-
-
-
-
-
-
-
-
-
-double Dichotomy::solveNewton(double x) {
-
-    // захист від неправильного старту
     if (x <= 0) x = 0.1;
+
+    iter = 0;
 
     for (int i = 0; i < 1000; i++) {
 
         double fx = f(x);
         double dfx = df(x);
 
-        // захист від ділення на 0
-        if (abs(dfx) < 1e-8) {
-            cout << "Derivative too small!" << endl;
+        if (abs(dfx) < 1e-8)
             return x;
-        }
 
         double x1 = x - fx / dfx;
 
-        // не даємо вилетіти в область x < 0
         if (x1 <= 0)
             x1 = x / 2;
+
+        iter++;
 
         if (abs(x1 - x) < eps)
             return x1;
@@ -95,6 +74,5 @@ double Dichotomy::solveNewton(double x) {
         x = x1;
     }
 
-    cout << "Newton did not converge" << endl;
     return x;
 }
