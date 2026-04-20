@@ -4,17 +4,17 @@
 
 using namespace std;
 
-// function
+
 double Dichotomy::f(double x) {
     return x + sqrt(x) + cbrt(x) - 2.5;
 }
 
-// derivative
+
 double Dichotomy::df(double x) {
     return 1 + 1/(2*sqrt(x)) + 1/(3*pow(x, 2.0/3.0));
 }
 
-// setters
+
 void Dichotomy::setA(double a) {
     this->a = a;
 }
@@ -27,7 +27,7 @@ void Dichotomy::setEps(double eps) {
     this->eps = eps;
 }
 
-// dichotomy method
+
 double Dichotomy::solveDichotomy() {
 
     if (f(a) * f(b) > 0) {
@@ -53,7 +53,7 @@ double Dichotomy::solveDichotomy() {
     return (a + b) / 2;
 }
 
-// Newton method
+
 double Dichotomy::solveNewton(double x0) {
 
     double x = x0;
