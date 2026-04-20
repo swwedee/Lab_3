@@ -14,8 +14,8 @@ public:
     void setB(double b);
     void setEps(double eps);
 
-    double solveDichotomy(int &iterations);
-    double solveNewton(double x0, int &iterations);
+    double solveDichotomy();
+    double solveNewton(double x0);
 };
 
 #endif
